@@ -17,7 +17,7 @@ const listingController = require("../controllers/listings.js");
 // index and create route...
 router.route("/")
     .get(wrapAsync(listingController.index))
-    .post(isLoggedIn, upload.single('listing[image]'), validateListing, wrapAsync(listingController.createNewListing)); 
+    .post(isLoggedIn, upload.single('listing[image]'), wrapAsync(listingController.createNewListing)); 
     // validateListing, this is the middleware to add in the above post route but you need to find logic for its proper implementation.
 
 // New Listing Route...
