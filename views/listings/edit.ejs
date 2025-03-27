@@ -1,0 +1,84 @@
+<% layout("/layouts/boilerplate") %>
+
+    <body>
+
+        <div class="row">
+            <div class="col-8 offset-2">
+                <br>
+                <h3>Edit Listing :</h3><br>
+                <form method="POST" action="/listings/<%=info._id%>?_method=PUT" class="new-edit-listing-form needs-validation" novalidate enctype="multipart/form-data">
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title:</label>
+                        <input type="text" id="title" name="listing[title]" value="<%= info.title %>" placeholder="Enter Title"
+                            autocomplete="off" class="form-control" required>
+                        <div class="invalid-feedback">Please add Title</div>
+
+                    </div>
+                    <hr>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description:</label>
+                        <textarea name="listing[description]" id="description" placeholder="Enter Description" autocomplete="off" class="form-control" required>
+                            <%= info.description %>
+                        </textarea>
+                        <div class="invalid-feedback">Please add Description</div>
+
+                    </div>
+                    <hr>
+
+                    
+                    <div class="mb-3 col-md-8">
+                        <p><b><u>Original Listing Image:</u></b></p>
+                        <img src="<%= info.image.url %>" class="show-image" width="400px" alt="<%= info.image.filename %>">
+                    </div>
+                   
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="image-name" class="form-label">Image Name:</label>
+                            <input type="text" id="image-name" name="listing[imageName]" value="<%= info.image.filename %>"
+                                placeholder="Enter Image Name" autocomplete="off" class="form-control" required>
+                        <div class="invalid-feedback">Please add Image Name</div>
+
+                        </div>
+
+                        <div class="mb-3 col-md-8">
+                            <label for="image-file" class="form-label">Upload New Image:</label>
+                            <input type="file" id="image-file" name="listing[image]"
+                                placeholder="Enter Image Url" autocomplete="off" class="form-control">
+                        <div class="invalid-feedback">Please add Image</div>
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="price" class="form-label">Price:</label>
+                            <input type="number" id="price" name="listing[price]" value="<%= info.price %>"
+                                placeholder="Enter Price" autocomplete="off" class="form-control" required>
+                        <div class="invalid-feedback">Please mention the Price</div>
+
+                        </div>
+
+                        <div class="mb-3 col-md-8">
+                            <label for="country" class="form-label">Country:</label>
+                            <input type="text" id="country" name="listing[country]" value="<%= info.country %>"
+                                placeholder="Enter Country" autocomplete="off" class="form-control" required>
+                        <div class="invalid-feedback">Please mention the Country</div>
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location:</label>
+                        <input type="text" id="location" name="listing[location]" value="<%= info.location %>"
+                            placeholder="Enter Location" autocomplete="off" class="form-control" required>
+                        <div class="invalid-feedback">Please mention the Location</div>
+                    </div>
+                    <hr>
+                    <Button type="submit" class="btn btn-dark add-btn">Edit Listing</Button>
+                    <br><br>
+                </form>
+            </div>
+        </div>
+    </body>
