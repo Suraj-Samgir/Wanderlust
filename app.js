@@ -98,16 +98,16 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get("/demouser", async (req, res) => {
-    let fakeuser = new User({
-        email: "student@gmail.com",
-        username: "Suraj Samgir"
-    });
+// app.get("/demouser", async (req, res) => {
+//     let fakeuser = new User({
+//         email: "student@gmail.com",
+//         username: "Suraj Samgir"
+//     });
 
-    // register method used to create new user and hash their password and adding salt.
-    let registeredUser = await User.register(fakeuser, "password");
-    res.send(registeredUser);
-})
+//     // register method used to create new user and hash their password and adding salt.
+//     let registeredUser = await User.register(fakeuser, "password");
+//     res.send(registeredUser);
+// })
 
 // Route for /listings
 app.use("/listings",listingRouter);

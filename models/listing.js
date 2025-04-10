@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Review = require("./review.js")
+const Review = require("./review.js");
+const { link } = require('joi');
 
 
 const listingSchema = new Schema({
@@ -16,6 +17,10 @@ const listingSchema = new Schema({
     price: { type: Number },
     location: { type: String },
     country: { type: String },
+    email: {type: String},
+    phone: {type: String},
+    websiteName: {type: String},
+    websiteUrl: {type: String},
     reviews: [
         {
             type: Schema.Types.ObjectId,

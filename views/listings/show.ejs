@@ -18,10 +18,20 @@
                         <p class="card-text"><%= info.description %></p>
                     </div> <br>
 
-                    <p class="card-text"><b>&#x20B9; <%= info.price.toLocaleString("en-IN") %> / night</b></p> <br>
-                    <p class="card-text"><%= info.location %></p>
-                    <p class="card-text"><%= info.country %></p>
-                           
+                    <p class="card-text"><b>&#x20B9; <%= info.price.toLocaleString("en-IN") %> / night</b></p>
+                    <p class="card-text"><b>Location: </b><%= info.location %>, <%= info.country %></p><br>
+                    <p class="card-text"><b>Contact Details</b></p>
+                    <p class="card-text"><b>Email: </b><%= info.email%></p>
+                    <p class="card-text"><b>Phone: </b><%= info.phone%></p>
+                    <% if(info.websiteUrl !== "") {%>
+                    <p class="card-text"><b>Visit Us: </b><a href="<%=info.websiteUrl%>" target="_blank">
+                        <% if(info.websiteName !== "") {%>
+                            <%= info.websiteName%>
+                        <% } else { %>
+                                <%= info.websiteUrl %>
+                        <% } %> 
+                    </a></p>
+                    <% } %>
                 </div>
             </div>
 

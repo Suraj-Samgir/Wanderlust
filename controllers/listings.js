@@ -25,7 +25,7 @@ module.exports.createNewListing = async (req, res) => {
         newListing.image = {filename:newListing.imageName, url:req.file.path};
         delete newListing.imageName;
         newListing.owner = req.user._id;
-     
+        
         await newListing.save();
         req.flash("success", "New Listing Created!");
 
