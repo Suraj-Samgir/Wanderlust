@@ -91,6 +91,7 @@ app.listen(port, () => {
     console.log("Server is listening to port 8080!");
 });
 
+// declaring the locals variables....
 app.use((req, res, next) => {
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
